@@ -56,3 +56,10 @@ class Solution:
         return dp(0, 0)
 
 Testcases
+
+"aa"
+"a"
+"aa"
+"a*"
+"ab"
+".*"
