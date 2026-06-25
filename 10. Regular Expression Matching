@@ -36,3 +36,22 @@ p contains only lowercase English letters, '.', and '*'.
 It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
 
 Solution
+
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        from functools import lru_cache
+        @lru_cache(None)
+        def dp(i: int, j: int) -> bool:
+            if j == len(p):
+                return i == len(s)
+            first_match = i < len(s) and (p[j] == '.' or p[j] == s[i])
+            if j + 1 < len(p) and p[j + 1] == '*':
+                if dp(i, j + 2):
+                    return True
+                if first_match and dp(i + 1, j):
+                    return True
+                return False
+            else:
+                return first_match and dp(i + 1, j + 1)
+        return dp(0, 0)
+
