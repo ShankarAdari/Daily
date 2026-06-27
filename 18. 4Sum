@@ -58,3 +58,8 @@ class Solution:
         return result
 
 Testcases
+
+[1,0,-1,0,-2,2]
+0
+[2,2,2,2,2]
+8
