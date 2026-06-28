@@ -45,3 +45,11 @@ Constraints:
 
 Solution
 
+from typing import List
+class Solution:
+    def maximumElementAfterDecrementingAndRearranging(self, arr: List[int]) -> int:
+        arr.sort()
+        cur = 0
+        for x in arr:
+            cur = min(x, cur + 1)
+        return cur
