@@ -42,3 +42,5 @@ class Solution:
                 count[s[left]] -= 1
                 left += 1
         return result
+
+Testcases
