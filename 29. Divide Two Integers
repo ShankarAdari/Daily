@@ -48,3 +48,5 @@ class Solution:
         if neg:
             res = -res
         return max(-2**31, min(res, 2**31 - 1))
+
+Testcase
